@@ -349,7 +349,8 @@ def user_getter(username):
     }'''
     variables = {'login': username}
     request = simple_request(user_getter.__name__, query, variables)
-    print('DEBUG RESPONSE:', request.json())
+    
+    print('DEBUG LEN:', len(username), 'REPR:', repr(username))
     return {'id': request.json()['data']['user']['id']}, request.json()['data']['user']['createdAt']
 
 
